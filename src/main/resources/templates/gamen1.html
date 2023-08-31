@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xml:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/core.css}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <form name="gamen1" action="login" method="post">
+            <p class="gamen_title" id="textTitleLogin">ログインID及びパスワードを入力して下さい。 </p>
+            <div class="txt_error_msg" style="height: 37px;">
+                <div th:if="${param.error}">
+                    <p th:text="ログインIDまたはパスワードが間違っています。"> </p>
+                </div>
+            </div>
+            <div class="blank_row"></div>
+            <div class="formGroup margin1">
+                <label for="">ログインID</label>
+                <input type="text" name="username" id="login_input" maxlength="25" class="formGroup-name" placeholder="Username" value="">
+            </div>
+            <div class="formGroup margin1">
+                <label for="">パスワード</label>
+                <input type="password" name="password" id="password_input" maxlength="25" class="formGroup-name" placeholder="Password" value="">
+            </div>
+
+            <div class="formGroup-button">
+                <button class="button btn-optional1" type="submit " id="btnLogin" >ログイン</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

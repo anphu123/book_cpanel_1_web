@@ -1,0 +1,25 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(–ÕŒÖ8ÒŸ†¥‡1
+a
+java:S1128"?Remove this unused import 'jvdc.book_cpanel_1.models.Category'.(æ˜ô¼şÿÿÿÿ8ÒŸ†¥‡1
+\
+java:S1128"?Remove this unused import 'jvdc.book_cpanel_1.models.Employee'.(º­Á‘8ÒŸ†¥‡1
+[
+java:S1128">Remove this unused import 'jvdc.book_cpanel_1.models.Product'.(Ö—¶Í8ÓŸ†¥‡1
+]
+java:S1128";Remove this unused import 'jvdc.book_cpanel_1.models.Role'.(ñ»µøÿÿÿÿ8ÓŸ†¥‡1
+j
+java:S1128	"MRemove this unused import 'jvdc.book_cpanel_1.repository.CategoryRepository'.(Û¹ß™8ÓŸ†¥‡1
+o
+java:S1128
+"MRemove this unused import 'jvdc.book_cpanel_1.repository.EmployeeRepository'.(ŠÚŠëÿÿÿÿÿ8ÓŸ†¥‡1
+i
+java:S1128"LRemove this unused import 'jvdc.book_cpanel_1.repository.ProductRepository'.(—ÜŞÒ8ÓŸ†¥‡1
+d
+java:S1128"GRemove this unused import 'org.springframework.boot.CommandLineRunner'.(È—ÿÅ8ÓŸ†¥‡1
+e
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8ÓŸ†¥‡1
+U
+java:S1068"3Remove this unused "passwordEncoder" private field.(£›Õÿÿÿÿÿ8ÓŸ†¥‡1
+H
+java:S1068"2Remove this unused "roleRepository" private field.(âÅïŞ

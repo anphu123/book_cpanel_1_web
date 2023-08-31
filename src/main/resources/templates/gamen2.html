@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xml:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/core.css}">
+    <script th:src="@{/js/script.js}"></script>
+    <script th:src="@{/js/table.js}"></script>
+
+    <title>Search</title>
+</head>
+<body>
+    <div class="container">
+        <span sec:authentication="name">Username</span>
+        <span sec:authentication="principal.authorities">Roles</span>
+        <span th:text="${idself}"></span>
+        <form name="gamen2" action="#"  data-th-action="@{/gamen2}" method="get">
+            <div class="gamen2_title_bar">
+                <div class="support_box1 dongang1">
+                    <p class="gamen_title">新規会員追加</p>
+                    <button sec:authorize="hasAnyAuthority('EDITOR','ADMIN')" class="button btn-optional2" type="button" onclick="window.location.href='/gamen3'">追加</button>
+                </div>
+                <button class="button btn-optional3" type="button"  onclick="window.location.href='/logout'" style="margin-top: 22px">ログアウト</button>
+            </div>
+            <div class="support_box1 dongang2">
+                <input type="text"  maxlength="25" class="search-input" id="myInput" >
+                <button class="button btn-optional3" type="button" onclick="checkRow()" >検索</button>
+            </div>
+            <p class="txt_error_msg">
+                <b id="txt_error_findName">
+                </b>
+            </p>
+            <table id="employeeTable" class="tableemp">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名前</th>
+                    <th>メール</th>
+                    <th>電話番号</th>
+                    <th sec:authorize="hasAnyAuthority('EDITOR','ADMIN')">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each ="x : ${employeeListt}" style="cursor: pointer">
+                    <td th:text="${x.id}" style="text-align: center">emp id</td>
+                    <td th:text="${x.nameEmployee}" name="emp_name">emp name</td>
+                    <td th:text="${x.mailEmployee}">emp mail</td>
+                    <td th:text="${x.phoneEmployee}">emp phone</td>
+                    <div th:switch="${#authorization.expression('hasAuthority(''EDITOR'')')}">
+                        <div th:case="true">
+                            <div th:switch="${x.id == idself}">
+                                <div th:case="true">
+                                    <td th:if="${x.id == idself}" style="text-align: center"  sec:authorize="hasAnyAuthority('EDITOR','ADMIN')"  th:onclick="|window.location.href='/self'|" >更新</td>
+                                </div>
+                                <div th:case="false">
+                                    <td th:if="${x.createrId == idself}" style="text-align: center"  sec:authorize="hasAnyAuthority('EDITOR','ADMIN')"  th:onclick="|window.location.href='/gamen6/${x.id}'|" >更新</td>
+                                    <td th:unless="${x.createrId == idself}" style="text-align: center"></td>
+                                </div>
+                             </div>
+                        </div>
+                        <div th:case="false">
+                            <td sec:authorize="hasAnyAuthority('ADMIN')"  th:onclick="|window.location.href='/gamen6/${x.id}'|" >更新</td>
+                        </div>
+                    </div>
+                </tr>
+              </table>
+            <br>
+        </form>
+    </div>
+</body>
+</html>
+

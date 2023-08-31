@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html
+        xml:th="http://www.thymeleaf.org" lang="en"
+        xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <link rel="stylesheet" th:href="@{/css/core.css}">
+    <script th:src="@{/js/script.js}"></script>
+    <script th:src="@{/js/fevalidation.js}"></script>
+    <title>Edit</title>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="return validationForNewEmployeeRegister2()" data-th-object="${employee}" method="post">
+            <div class="support_box1 dongang3">
+                <p class="gamen_title">会員を編集します。</p>
+                <button class="button btn-optional2"  type="button" onclick="window.location.href='/logout'">ログアウト</button>
+            </div>
+            <div style="height: 10px">
+                <p class="txt_error_msg" id="txt_error_msg_gm6" th:text="${msgValidationGamen6}">>  </p>
+            </div>
+            <div style="position: relative">
+                <div style="position: absolute;left: 544px;top: 40px;width: 100px;z-index: 999">
+                    <th: block th:each="role : ${roleList}">
+                        <div style="display: inline-flex">
+                            <input type ="radio" th:field="*{roles}" th:text="${role.name}" th:value = "${role.id}"/>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+            <div class="formGroup">
+                <label >ID　　　　</label>
+                <input type="text"  maxlength="25" class="formGroup-name fG-width"　 th:field="*{id}" disabled/>
+            </div>
+            <div class="formGroup">
+                    <label >名前　　　 </label>
+                    <input type="text"  maxlength="25" class="formGroup-name fG-width" id="txtnameEmployee" th:field="*{nameEmployee}" />
+            </div>
+            <div class="formGroup">
+                    <label >メール　　 </label>
+                    <input type="text" maxlength="25" class="formGroup-name fG-width" id="txtmailEmployee"  th:field="*{mailEmployee}"/>
+            </div>
+            <div class="formGroup">
+                <label>パスワード</label>
+                <input  type="password" maxlength="25" class="formGroup-name fG-width" id="txtpassword"  th:field="*{password}" />
+            </div>
+            <div class="formGroup">
+                <input type="text" maxlength="25" class="formGroup-name fG-width"  th:field="*{createrId}" hidden/>
+            </div>
+
+            <div class="formGroup margin1">
+                    <div class="formGroup">
+                        <label >電話番号　<label>
+                        <input  maxlength="10" class="formGroup-name fG-width" id="txtphoneEmployee" th:field="*{phoneEmployee}"/>
+                    </div>
+                <div class="support_box1 dongang6">
+                    <button class="button btn-optional2" type="button" name="action" value="cancelof6" onclick="direction2()">戻る</button>
+                    <button class="button btn-optional2" type="submit" name="action" sec:authorize="hasAnyAuthority('EDITOR','ADMIN')" value="confirmdelete">削除</button>
+                    <button class="button btn-optional2" type="submit" name="action" value="confirmsave">更新</button>
+                </div>
+                </form>
+            </div>
+</body>
+<script>
+    document.getElementById("txtpassword").value = "password";
+    let message = "[[${error}]]";
+    if(message) {
+        alert(message)
+    }
+</script>
+</html>
