@@ -6,28 +6,26 @@
     <link rel="stylesheet" th:href="@{/css/core.css}">
     <script th:src="@{/js/script.js}"></script>
 
-    <title>Delete Complete</title>
+    <title>Xóa Thành Viên Hoàn Tất </title>
 </head>
 <body>
-    <div class="container">
-        <form name="gamen10" th:action="@{/gamen2}" method="get">
-            <div class="support_box1 dongang3">
-                <p class="gamen_title">削除の完了</p>
-                <button class="button btn-optional2" type="button" onclick="window.location.href='/logout'">ログアウト</button>
+<div class="container">
+    <form name="gamen10" th:action="@{/gamen2}" method="get">
+        <div class="support_box1 dongang3">
+            <p class="gamen_title">Hoàn tất xóa thành viên</p>
+            <button class="button btn-optional2" type="button" onclick="window.location.href='/logout'">Đăng xuất</button>
+        </div>
+        <div class="blank_row"></div>
+        <div class="blank_row"></div>
+        <div class="blank_row"></div>
+        <div class="blank_row"></div>
+        <p class="gamen_content">Thành viên đã được xóa thành công.</p>
+        <div class="blank_row"></div>
 
-            </div>
-            <div class="blank_row"></div>
-            <div class="blank_row"></div>
-            <div class="blank_row"></div>
-            <div class="blank_row"></div>
-            <p class="gamen_content">削除が完了しました。</p>
-            <div class="blank_row"></div>
-           
         <div class="support_box1 dongang5">
             <button class="button btn-optional2" type="submit" >Ok</button>
         </div>
-
-        </form>
-    </div>
+    </form>
+</div>
 </body>
 </html>

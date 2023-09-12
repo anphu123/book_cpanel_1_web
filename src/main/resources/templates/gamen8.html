@@ -4,30 +4,27 @@
     <link rel="stylesheet" th:href="@{/css/core.css}">
     <script th:src="@{/js/script.js}"></script>
 
-    <title>Edit Complete</title>
+    <title>Hoàn Thành Chỉnh Sữa</title>
 </head>
 <body>
-    <div class="container">
-        <form name="gamen8" th:action="@{/gamen2}" method="get">
-            <div class="support_box1 dongang3">
-                <p class="gamen_title">更新の完了</p>
-                <button class="button btn-optional2" type="button" onclick="window.location.href='/logout'">ログアウト</button>
+<div class="container">
+    <form name="gamen8" th:action="@{/gamen2}" method="get">
+        <div class="support_box1 dongang3">
+            <p class="gamen_title">Hoàn thành cập nhật</p>
+            <button class="button btn-optional2" type="button" onclick="window.location.href='/logout'">Đăng xuất</button>
+        </div>
+        <div class="blank_row"></div>
+        <div class="blank_row"></div>
+        <div class="blank_row"></div>
+        <div class="blank_row"></div>
+        <p class="gamen_content">Cập nhật đã hoàn thành.</p>
+        <div class="blank_row"></div>
 
-            </div>
-            <div class="blank_row"></div>
-            <div class="blank_row"></div>
-            <div class="blank_row"></div>
-            <div class="blank_row"></div>
-            <p class="gamen_content">更新が完了しました。</p>
-            <div class="blank_row"></div>
-
-           
         <div class="support_box1 dongang5">
-            <button class="button btn-optional2" type="submit">Ok</button>
-
+            <button class="button btn-optional2" type="submit">OK</button>
         </div>
 
-        </form>
-    </div>
+    </form>
+</div>
 </body>
 </html>

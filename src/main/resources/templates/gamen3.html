@@ -11,49 +11,47 @@
     <script th:src="@{/js/fevalidation.js}"></script>
     <script th:src="@{/js/table.js}"></script>
 
-    <title>Register</title>
+    <title>Đăng Ký </title>
 </head>
 <body>
-    <div class="container">
-<!--        return validationForNewEmployeeRegister();-->
-        <form onsubmit="true" action="#" data-th-action="@{/gamen3}" data-th-object="${employee}" method="post">
-            <div class="support_box1 dongang3">
-                <p class="gamen_title" id="lblRegisterTitle">会員を登録します。 </p>
-                <button class="button btn-optional2"  type="button"  onclick="window.location.href='/logout'">ログアウト</button>
-<!--                <p class="txt_error_msg" id="txt_error_msg_gm3" th:text="${msgValidationGamen3}">  </p>-->
-            </div>
-            <div class="blank_row" style="position: relative">
-                <div style="position: absolute;left: 544px;top: 40px;width: 100px;z-index: 999">
-                    <th: block th:each="role : ${roleList}">
-                        <div style="display: inline-flex">
-                            <input type ="radio" th:field="*{roles}" th:text="${role.name}" th:value ="${role.id}" />
-                        </div>
-                    </th:block>
+<div class="container">
+    <!--        return validationForNewEmployeeRegister();-->
+    <form onsubmit="true" action="#" data-th-action="@{/gamen3}" data-th-object="${employee}" method="post">
+        <div class="support_box1 dongang3">
+            <p class="gamen_title" id="lblRegisterTitle">Đăng ký thành viên.</p>
+            <button class="button btn-optional2"  type="button"  onclick="window.location.href='/logout'">Đăng xuất</button>
+            <!--                <p class="txt_error_msg" id="txt_error_msg_gm3" th:text="${msgValidationGamen3}">  </p>-->
+        </div>
+        <div class="blank_row" style="position: relative">
+            <th: block th:each="role : ${roleList}">
+                <div style="display: inline-flex">
+                    <input type ="radio" th:field="*{roles}" th:text="${role.name}" th:value ="${role.id}" />
                 </div>
-            </div>
-            <div class="formGroup margin1">
-                <label  id="lblRegisterEmployeeName" >名前<span id="errRegisterEmployeeName" style="color: #f2f2f2;">*</span>　　　</label>
-                    <input type="text" maxlength="25" class="formGroup-name fG-width" id="txtnameEmployee" th:field="*{nameEmployee}"/>
-            </div>
-            <div class="formGroup margin1">
-                <label  id="lblRegisterEmployeeMail">メール<span id="errRegisterEmployeeMail" style="color: #f2f2f2;">*</span>　　</label>
-                    <input type="text"  maxlength="25" class="formGroup-name fG-width"  id="txtmailEmployee" th:field="*{mailEmployee}"/>
-            </div>
-            <div class="formGroup margin1">
-                <label  id="lblRegisterEmployeePwd">パスワード<span id="errRegisterEmployeePwd" style="color: #f2f2f2;">*</span></label>
-                <input type="password"  maxlength="25" class="formGroup-name fG-width"  id="txtpasswordEmployee" th:field="*{password}"/>
-            </div>
-            <div class="formGroup margin1">
-                <label  id="lblRegisterEmployeePhone">電話番号<span id="errRegisterEmployeePhone" style="color: #f2f2f2;">*</span>　</label>
-                <input   maxlength="10" class="formGroup-name fG-width" id="txtphoneEmployee" th:field="*{phoneEmployee}"/>
-            </div>
+                </th:block>
+        </div>
+        <div class="formGroup margin1">
+            <label  id="lblRegisterEmployeeName" >Họ và tên<span id="errRegisterEmployeeName" style="color: #f2f2f2;">*</span>　　　</label>
+            <input type="text" maxlength="25" class="formGroup-name fG-width" id="txtnameEmployee" th:field="*{nameEmployee}"/>
+        </div>
+        <div class="formGroup margin1">
+            <label  id="lblRegisterEmployeeMail">Email<span id="errRegisterEmployeeMail" style="color: #f2f2f2;">*</span>　　</label>
+            <input type="text"  maxlength="25" class="formGroup-name fG-width"  id="txtmailEmployee" th:field="*{mailEmployee}"/>
+        </div>
+        <div class="formGroup margin1">
+            <label  id="lblRegisterEmployeePwd">Mật khẩu<span id="errRegisterEmployeePwd" style="color: #f2f2f2;">*</span></label>
+            <input type="password"  maxlength="25" class="formGroup-name fG-width"  id="txtpasswordEmployee" th:field="*{password}"/>
+        </div>
+        <div class="formGroup margin1">
+            <label  id="lblRegisterEmployeePhone">Số điện thoại<span id="errRegisterEmployeePhone" style="color: #f2f2f2;">*</span>　</label>
+            <input   maxlength="10" class="formGroup-name fG-width" id="txtphoneEmployee" th:field="*{phoneEmployee}"/>
+        </div>
 
         <div class="support_box1 dongang4">
-            <button class="button btn-optional2" type="button" onclick="direction2()">戻る</button>
-            <button class="button btn-optional2" type="submit" name="action" id="saveNewEmployee" value="saveNewEmployee">確認</button>
+            <button class="button btn-optional2" type="button" onclick="direction2()">Quay lại</button>
+            <button class="button btn-optional2" type="submit" name="action" id="saveNewEmployee" value="saveNewEmployee">Xác nhận</button>
         </div>
-        </form>
-    </div>
+    </form>
+</div>
 
 <script>
     let message = "[[${error}]]";
