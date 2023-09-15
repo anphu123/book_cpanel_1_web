@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation with Tabs and Footer</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Styles */
+        .nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Tab Content Styles */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        /* Display the first tab by default */
+        #tab1 {
+            display: block;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Form Styles */
+        .category-form {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .category-list {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a href="#" onclick="openTab('tab1')">trang chủ</a>
+    <a href="#" onclick="openTab('tab2')">them loai </a>
+    <a href="#" onclick="openTab('tab3')">them sách</a>
+    <a href="#" onclick="openTab('tab4')">quan lý user</a>
+</div>
+
+<div class="tab-content" id="tab1">
+    <h2>Tab 1 Content</h2>
+    <p>This is the content of Tab 1.</p>
+</div>
+
+<div class="tab-content" id="tab2">
+    <h2>Create Category</h2>
+    <div class="category-form">
+        <form id="categoryForm">
+            <label for="categoryName">Category Name:</label>
+            <input type="text" id="categoryName" name="categoryName">
+            <button type="submit">Create</button>
+        </form>
+    </div>
+    <h2>Category List</h2>
+    <div class="category-list" id="categoryList">
+        <!-- Display the list of categories here -->
+        <ul>
+            <li>Category 1</li>
+            <li>Category 2</li>
+            <li>Category 3</li>
+        </ul>
+    </div>
+</div>
+
+<div class="tab-content" id="tab3">
+    <h2>Tab 3 Content</h2>
+    <p>This is the content of Tab 3.</p>
+</div>
+
+<div class="tab-content" id="tab4">
+    <h2>Tab 4 Content</h2>
+    <p>This is the content of Tab 4.</p>
+</div>
+
+<div class="footer">
+    &copy; 2023 Your Website Name. All rights reserved.
+</div>
+
+
+<script>
+    // JavaScript function to open a specific tab
+    function openTab(tabId) {
+        var tabs = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = "none";
+        }
+        document.getElementById(tabId).style.display = "block";
+    }
+
+    // JavaScript to handle category creation
+    document.getElementById("categoryForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        var categoryNameInput = document.getElementById("categoryName");
+        var categoryName = categoryNameInput.value.trim();
+
+        if (categoryName !== "") {
+            // Create a new list item and append it to the category list
+            var categoryList = document.getElementById("categoryList").querySelector("ul");
+            var newListItem = document.createElement("li");
+            newListItem.textContent = categoryName;
+            categoryList.appendChild(newListItem);
+
+            // Clear the input field
+            categoryNameInput.value = "";
+        }
+    });
+</script>
+</body>
+</html>
