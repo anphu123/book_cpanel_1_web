@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xml:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/core.css}">
+    <script th:src="@{/js/script.js}"></script>
+
+    <title>Register Complete</title>
+</head>
+<body>
+    <div class="container" >
+        <form name="gamen5" th:action="@{/gamen2}" method="get">
+            <div class="support_box1 dongang3">
+                <p class="gamen_title">登録の完了</p>
+                <button class="button btn-optional2" type="button" onclick="window.location.href='/logout'">ログアウト</button>
+            </div>
+            <div class="blank_row"></div>
+            <div class="blank_row"></div>
+            <div class="blank_row"></div>
+            <div class="blank_row"></div>
+            <p class="gamen_content">登録が完了しました。</p>
+            <div class="blank_row"></div>
+        <div class="support_box1 dongang5">
+            <button class="button btn-optional2"  type="submit">Ok</button>
+        </div>
+
+        </form>
+    </div>
+</body>
+</html>

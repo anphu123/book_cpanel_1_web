@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xml:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/core.css}">
+    <title>Register Confirm</title>
+</head>
+<body>
+    <div class="container">
+        <form action="#" th:action="@{/save-employee}" th:object="${employeeconfirm}" data-th-object="${employeeconfirm}" method="post">
+            <div class="support_box1 dongang3">
+                <p class="gamen_title">会員を登録します。</p>
+                <button class="button btn-optional2" type="button" onclick="window.location.href='/logout'" >ログアウト</button>
+            </div>
+            <p class="gamen_title">この内容でよろしければ、「登録」ボタンをクリックしてください。</p>
+            <div class="blank_row" style="position: relative">
+                <div style="position: absolute;right: 999px">
+                    <th: block th:each="role : ${roleList}">
+                        <div style="display: inline-flex">
+                            <input type ="radio" th:field="*{roles}" th:text="${role.name}" th:value = "${role.id}"/>
+                        </div>
+                        </th:block>
+                </div>
+            </div>
+            <table>
+                <tr>
+                  <td>名前</td>
+                  <td  th:text="${employeeconfirm.nameEmployee}">nameEmployee</td>
+                    <input type="hidden" th:field="*{nameEmployee}" id="nameEmployee">
+                </tr>
+                <tr>
+                    <td>メール</td>
+                    <td th:text="${employeeconfirm.mailEmployee}">mailEmployee</td>
+                    <input type="hidden" th:field="*{mailEmployee}" id="mailEmployee">
+                    <input type="hidden" th:field="*{password}" id="password">
+                </tr>
+                <tr>
+                    <td>電話番号</td>
+                    <td th:text="${employeeconfirm.phoneEmployee}">phoneEmployee</td>
+                      <input type="hidden" min="10" max="10" th:field="*{phoneEmployee}" id="phoneEmployee">
+                </tr>
+            </table>
+        <div class="support_box1 dongang4">
+            <button class="button btn-optional2"  type="button" onclick="history.back()">戻る</button>
+            <button class="button btn-optional2" name="action"  type="submit">登録</button>
+        </div>
+        </form>
+    </div>
+
+</body>
+</html>

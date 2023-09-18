@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xml:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/css/core.css}">
+    <script th:src="@{/js/script.js}"></script>
+    <title>Edit confirm</title>
+</head>
+<body>
+    <div class="container">
+        <form name="gamen7" th:action="@{/save-employee}" th:object="${employeeconfirm}" data-th-object="${employeeconfirm}" method="post">
+        <div class="support_box1 dongang3">
+                <p class="gamen_title">会員を更新します。</p>
+                <button class="button btn-optional2"  type="button" onclick="window.location.href='/logout'">ログアウト</button>
+            </div>
+            <p class="gamen_title">この内容でよろしければ、「Ok」ボタンをクリックしてください。</p>
+            <div class="blank_row" style="position: relative">
+                <div style="position: absolute;right: 999px">
+                    <th: block th:each="role : ${roleList}">
+                        <div style="display: inline-flex">
+                            <input type ="radio" th:field="*{roles}" th:text="${role.name}" th:value = "${role.id}"/>
+                        </div>
+                        </th:block>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td  th:text="${employeeconfirm.id}">id</td>
+                    <input type="hidden" th:field="*{id}" id="id">
+                </tr>
+                <tr>
+                    <td>名前</td>
+                    <td  th:text="${employeeconfirm.nameEmployee}">nameEmployee</td>
+                    <input type="hidden" th:field="*{nameEmployee}" id="nameEmployee">
+                </tr>
+                <tr>
+                    <td>メール</td>
+                    <td th:text="${employeeconfirm.mailEmployee}">mailEmployee</td>
+                    <input type="hidden" th:field="*{mailEmployee}" id="mailEmployee">
+                </tr>
+                <tr style="display: none">
+                    <td hidden th:text="${employeeconfirm.password}">pwdEmployee</td>
+                    <input type="hidden" th:field="*{password}" id="pwdEmployee">
+                    <td th:text="${employeeconfirm.createrId}">createrIdEmployee</td>
+                    <input type="hidden"  th:field="*{createrId}" id="createrId">
+                </tr>
+                <tr>
+                    <td>電話番号</td>
+                    <td th:text="${employeeconfirm.phoneEmployee}">phoneEmployee</td>
+                    <input type="hidden"  th:field="*{phoneEmployee}" id="phoneEmployee">
+                </tr>
+            </table>
+        <div class="support_box1 dongang4">
+            <button class="button btn-optional2"  type="button" style="font-weight: bold" onclick="history.back()">戻る</button>
+            <button class="button btn-optional2" type="submit" style="font-size: 18px">OK</button>
+        </div>
+        </form>
+    </div>
+<script>
+    let message = "[[${error}]]";
+    if(message) {
+        alert(message)
+    }
+
+</script>
+</body>
+</html>

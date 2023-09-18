@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<html xml:th="http://www.thymeleaf.org" lang="en">-->
+<head>
+    <link rel="stylesheet" th:href="@{/css/core.css}">
+    <script th:src="@{/js/script.js}"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="container_form">
+
+        <form  class="form-optional2" method="post" enctype="multipart/form-data">
+            <div class="box-inside-form">
+                <div class="mx-auto w-25 " style="max-width:100%;">
+                    <h>Thêm Hình Ảnh</h>
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="image" name="image" aria-describedby="inputGroupFileAddon04"  aria-label="Upload" required="required" onchange="getImagePreview(event)">
+                    </div>
+                    <div id="preview"></div>
+
+                </div>
+            </div>
+            <div class="box-inside-form">
+                    <h class="text-center mb-3">Thông Tin</h>
+                    <div class="formGroup form-optional1">
+                        <label >Tên Sách</label>
+                        <input type="text" id="name" name="name"/>
+                    </div>
+                    <div class="formGroup form-optional1">
+                        <label >Thể Loại</label>
+                        <input type="text" id="the-loai" name="the-loai"/>
+                    </div>
+                    <div class="formGroup form-optional1">
+                        <label >Tác Giả</label>
+                        <input type="text" id="author" name="author"/>
+                    </div>
+                    <div class="formGroup form-optional1">
+                        <label >Số Tập</label>
+                        <input type="number" id="so-tap" name="so-tap"/>
+                    </div>
+                    <div class="formGroup form-optional1">
+                        <label >Giá</label>
+                        <input type="number" id="gia" name="gia"/>
+
+                    </div>
+                    <div class="formGroup form-optional1">
+                        <label >Giới Thiệu</label>
+                        <textarea cols="40" rows="5" id="mo-ta-ngan" name="mo-ta-ngan"></textarea>
+                    </div>
+                <button style="width:30%" type="submit">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    function getImagePreview(event){
+        var image = URL.createObjectURL(event.target.files[0]);
+        var imagediv= document.getElementById('preview');
+        var newimg= document.createElement('img');
+        imagediv.innerHTML='';
+        newimg.src= image;
+        newimg.width= "300";
+        imagediv.appendChild(newimg);
+    }
+</script>
+</html>

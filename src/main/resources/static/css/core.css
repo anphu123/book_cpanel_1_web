@@ -1,0 +1,59 @@
+
+/*conducting*/
+.container {width: 100%;}
+.container_form{display: flex;flex-direction: row;align-content: center;justify-content: center;width: 692px;height: 389px;margin: 100px auto;background-color: #f2f2f2; border: 1px solid darkslategrey;box-shadow: 2px 2px 1px darkslategrey;font-size: 1.2em}
+.box-inside-form{display: flex;width: 47%;padding:12px;flex-direction: column;align-content: center;justify-content: flex-start;margin: unset;background-color: unset;border: unset;box-shadow: unset;}
+.support_box1{display: flex;align-items: center; flex-direction: row;justify-content: space-between}
+.dongang1{width: 35%}
+.dongang2{width: 65%}
+.dongang3{width: 95%}
+.dongang4{margin: 0px auto; width: 30%}
+.dongang5{margin: 0px auto; width: 30%;justify-content: center}
+.dongang6{margin: 0px auto; width: 57%}
+
+.txt_error_msg{margin-left: 32px;font-size: small; color: red;}
+.txt_error_mf{margin-left: 12px}
+
+.gamen_title{margin: 12px 0px 0px 12px;color: #002060;}
+
+.blank_row{width: max-content;height: 5%;}
+
+.button{border: 1px solid;border-radius: 6px;background-size: cover;background-color: #9dc3e6;cursor: pointer}
+.btn-optional1{margin-right: 13px;padding: 6px 66px;border-radius: 3px;}
+.btn-optional2{padding: 6px 22px;margin: 12px 0px 0px 12px;height: 80%;}
+.btn-optional3{padding: 10px 24px;margin-right: 12px;height: 80%;}
+
+
+form{width: 692px;height: 389px;margin: 100px auto;background-color: #f2f2f2; border: 1px solid darkslategrey;box-shadow: 2px 2px 1px darkslategrey;font-size: 1.2em}
+.formGroup-button{display: flex;flex-direction: column;justify-content: space-between;align-items: center; margin-top: 20px;}
+.formGroup {margin: 8px auto;position: relative;max-width: 450px;color: #002060}
+.form-optional1{width: 87%;display: flex;justify-content: space-between;flex-direction: row;align-content: flex-start;margin: 0px 11px 11px 0px;}
+.form-optional2{margin: unset;display: flex;border: unset;box-shadow: unset;}
+.margin1 {margin: 19px auto}
+.formGroup-name{margin-left: 25px; font-size: medium;padding: 6px;}
+.fG-width{width: 50%;}
+
+.search-input{margin-left: 25px; font-size: medium;padding: 6px;width: 60%;}
+.gamen2_title_bar{display: flex; flex-direction: row; justify-content: space-between; align-items: center;}
+
+/* employee table*/
+.tableemp {font-family: arial, sans-serif;font-size: medium;color: #002060;border-collapse: collapse;width: 90%; margin: 0px auto;}
+th{border: 1px solid #131414;background-color: #d6dce5;text-align: center;padding: 3px;}
+td{border: 1px solid #131414;text-align: left;padding: 3px;}
+tr:nth-child(even) {background-color: #e3e9fd;}
+.txt_error_msg{margin-left: 14px ;font-size: small; color: red; height: 14px}
+.bottom{margin-top: 6px}
+.paginate_button {
+    box-sizing: border-box;display: inline-block;min-width: 1.5em;margin-left: 0.2em;padding: -0.5em 1em;text-align: center;background-color: #d6dce5;
+    text-decoration: none !important;cursor: pointer;color: #333 !important;border: 1px solid transparent;border-radius: 2px;
+}
+.dataTables_paginate{text-align: end;width: 90%;margin: 0px auto;}
+.current {background: linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);}
+/*confirm */
+
+table {font-family: arial, sans-serif;font-size: medium;color: #002060;border-collapse: collapse;width: 55%;margin: 33px auto;}
+td{border: 1px solid #131414;text-align: left;padding: 5px;}
+
+/*complete*/
+.gamen_content{text-align: center;color: red;}
+
