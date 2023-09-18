@@ -10,21 +10,21 @@ function validationForNewEmployeeRegister() {
     phoneEmployee = document.getElementById('txtphoneEmployee').value;
     errs = [];
     if (!nameEmployee.match(nameformat) || nameEmployee.length >= 25) {
-        errs.push("お名前は25文字以内で入力して下さい。");
+        errs.push("Vui lòng nhập tên của bạn trong vòng 25 ký tự hoặc ít hơn.");
         document.getElementById("errRegisterEmployeeName").style.color = "red";
     } else {
         document.getElementById("errRegisterEmployeeName").style.color = "#f2f2f2";
     }
 
     if (!mailEmployee.match(mailformat) || mailEmployee.length >= 25) {
-        errs.push("メールアドレスは、25文字以内で正しく入力して下さい。そして　format　もう　1回　チェックしてください。");
+        errs.push("Vui lòng nhập địa chỉ email chính xác trong vòng 25 ký tự hoặc ít hơn　format　Vui lòng kiểm tra lại một lần nữa.");
         document.getElementById("errRegisterEmployeeMail").style.color = "red";
     } else {
         document.getElementById("errRegisterEmployeeMail").style.color = "#f2f2f2";
     }
 
     if (!phoneEmployee.match(phoneformat)) {
-        errs.push("電話番号は、数字10文字以内で入力して下さい。");
+        errs.push("Vui lòng nhập số điện thoại trong vòng 10 ký tự hoặc ít hơn.");
         document.getElementById("errRegisterEmployeePhone").style.color = "red";
     } else {
         document.getElementById("errRegisterEmployeePhone").style.color = "#f2f2f2";

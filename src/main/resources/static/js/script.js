@@ -13,12 +13,12 @@ function directionexit(){
 }
 function checkRow(){
     let  check;
-    let errormsg="検索結果　がありません";
+    let errormsg="Không có kết quả tìm kiếm.";
     check = $("tr")[1].getElementsByTagName("td")[0].innerText;
     if($('#myInput').val() && check !== "No matching records found")
     window.location.replace("/gamen6/"+check);
     else
-    document.getElementById("txt_error_findName").innerHTML=errormsg;
+    document.getElementById("Không tìm thấy bản ghi phù hợp").innerHTML=errormsg;
 }
 
 
