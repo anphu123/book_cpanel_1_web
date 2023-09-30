@@ -18,8 +18,8 @@
 <!--        return validationForNewEmployeeRegister();-->
         <form onsubmit="true" action="#" data-th-action="@{/gamen3}" data-th-object="${employee}" method="post">
             <div class="support_box1 dongang3">
-                <p class="gamen_title" id="lblRegisterTitle">会員を登録します。 </p>
-                <button class="button btn-optional2"  type="button"  onclick="window.location.href='/logout'">ログアウト</button>
+                <p class="gamen_title" id="lblRegisterTitle">ĐĂNG KÝ THÀNH VIÊN </p>
+                <button class="button btn-optional2"  type="button"  onclick="window.location.href='/logout'">ĐĂNG XUẤT</button>
 <!--                <p class="txt_error_msg" id="txt_error_msg_gm3" th:text="${msgValidationGamen3}">  </p>-->
             </div>
             <div class="blank_row" style="position: relative">
@@ -32,25 +32,25 @@
                 </div>
             </div>
             <div class="formGroup margin1">
-                <label  id="lblRegisterEmployeeName" >名前<span id="errRegisterEmployeeName" style="color: #f2f2f2;">*</span>　　　</label>
+                <label  id="lblRegisterEmployeeName" >TÊN<span id="errRegisterEmployeeName" style="color: #f2f2f2;">*</span>　　　</label>
                     <input type="text" maxlength="25" class="formGroup-name fG-width" id="txtnameEmployee" th:field="*{nameEmployee}"/>
             </div>
             <div class="formGroup margin1">
-                <label  id="lblRegisterEmployeeMail">メール<span id="errRegisterEmployeeMail" style="color: #f2f2f2;">*</span>　　</label>
+                <label  id="lblRegisterEmployeeMail">EMAIL<span id="errRegisterEmployeeMail" style="color: #f2f2f2;">*</span>　　</label>
                     <input type="text"  maxlength="25" class="formGroup-name fG-width"  id="txtmailEmployee" th:field="*{mailEmployee}"/>
             </div>
             <div class="formGroup margin1">
-                <label  id="lblRegisterEmployeePwd">パスワード<span id="errRegisterEmployeePwd" style="color: #f2f2f2;">*</span></label>
+                <label  id="lblRegisterEmployeePwd">MẬT KHẨU<span id="errRegisterEmployeePwd" style="color: #f2f2f2;">*</span></label>
                 <input type="password"  maxlength="25" class="formGroup-name fG-width"  id="txtpasswordEmployee" th:field="*{password}"/>
             </div>
             <div class="formGroup margin1">
-                <label  id="lblRegisterEmployeePhone">電話番号<span id="errRegisterEmployeePhone" style="color: #f2f2f2;">*</span>　</label>
+                <label  id="lblRegisterEmployeePhone">SỐ ĐIỆN THOẠI<span id="errRegisterEmployeePhone" style="color: #f2f2f2;">*</span>　</label>
                 <input   maxlength="10" class="formGroup-name fG-width" id="txtphoneEmployee" th:field="*{phoneEmployee}"/>
             </div>
 
         <div class="support_box1 dongang4">
-            <button class="button btn-optional2" type="button" onclick="direction2()">戻る</button>
-            <button class="button btn-optional2" type="submit" name="action" id="saveNewEmployee" value="saveNewEmployee">確認</button>
+            <button class="button btn-optional2" type="button" onclick="direction2()">TRỞ LẠI</button>
+            <button class="button btn-optional2" type="submit" name="action" id="saveNewEmployee" value="saveNewEmployee">XÁC NHẬN</button>
         </div>
         </form>
     </div>

@@ -304,16 +304,16 @@ public class EmployeeController {
     private void filterError(String errorField){
         switch (errorField) {
             case "nameEmployee":
-                errs.add("お名前は25文字以内で入力して下さい。");
+                errs.add("Tên phải nhập từ 3-25 ký tự.");
                 break;
             case "mailEmployee":
-                errs.add("メールアドレスは、20文字以内で正しく入力して下さい。format は　invalid");
+                errs.add("Email phải nhập dưới 20 ký tự và có định dạng không hợp lệ.");
                 break;
             case "phoneEmployee":
-                errs.add("電話番号は、数字10文字以内で入力して下さい。");
+                errs.add("Số điện thoại phải nhập dưới 10 chữ số.");
                 break;
             case "password":
-                errs.add("パスワードは、empty 入力しないで下さい。");
+                errs.add("Vui lòng không để trống mật khẩu.");
                 break;
             default:
                 break;

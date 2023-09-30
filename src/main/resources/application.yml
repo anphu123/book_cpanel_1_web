@@ -14,7 +14,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/book
     username: root
-    password: 22072023
+    password: anphu2210
   jpa:
     database-platform: org.hibernate.dialect.MySQL8InnoDBDialect
     generate-ddl: true
