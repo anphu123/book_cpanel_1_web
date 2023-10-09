@@ -91,7 +91,6 @@ public class EmployeeController {
     }
     @PostMapping(value="/self",params="action=confirmdelete")
     public ModelAndView confirmDeleteSelf(){
-
         int idself = getAutthenticationId();
         Employee employee = employeeService.get(idself);
         boolean checkprincipal= employee.getRoles().contains(new Role(1,"ADMIN"));
@@ -233,87 +232,19 @@ public class EmployeeController {
     }
 
 
-
-
-
-
-    /* SAVING TAI KANRYOU
-    *  @PostMapping(value="/gamen3", params="action=saveNewEmployee")
-    public ModelAndView confirmEmployee(@ModelAttribute("employee") Employee employee) {
-        ModelAndView modelAndView = new ModelAndView("gamen4");
-        List<Role> roleList = roleRepository.findAll();
-        modelAndView.addObject("roleList",roleList);
-        modelAndView.addObject("employeeconfirm",employee);
-        System.out.println("emprole1111111:"+employee.getRoles());
-        return modelAndView;
-    }
-
-    @GetMapping(value = "/gamen4")
-    public ModelAndView confirmEmployee2(@ModelAttribute("employee") Employee employee){
-        ModelAndView modelAndView = new ModelAndView("gamen5");
-        List<Role> roleList = roleRepository.findAll();
-
-        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
-        modelAndView.addObject("roleList",roleList);
-        modelAndView.addObject("employee",employee);
-        System.out.println("emprole2222222222:"+employee.getRoles());
-        return modelAndView;
-    }
-
-    @PostMapping(value="/gamen4")
-    public String complete(Employee employee){
-        try {
-            employee.setEnabled(true);
-            employee.setPassword(passwordEncoder.encode(employee.getPassword()));
-            employeeService.save1(employee);
-        } catch (Exception e) {
-            System.out.println(e);
-            return null;
-        }
-        return "redirect:/gamen2";
-    }
-    *
-    * */
-
-
-
-//
-//    boolean beValidation(Employee emp){
-//        boolean checkname , checkmail, checkphone;
-//
-//        errs = new ArrayList<>();
-//        String PATTERN ="^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]{1,20}+@[a-zA-Z0-9.-]+$";
-//        Pattern pattern = Pattern.compile(PATTERN);
-//        Matcher matcher = pattern.matcher(emp.getMailEmployee());
-//
-//        checkname = Pattern.matches("[a-zA-Z0-9 ]+{25}",emp.getNameEmployee());
-//        checkmail = matcher.matches();
-//        checkphone = Pattern.matches("[0-9]{10}",emp.getPhoneEmployee());
-//
-//        if(!checkname)errs.add("お名前は25文字以内で入力して下さい。");
-//        if(!checkmail)errs.add("メールアドレスは、20文字以内で正しく入力して下さい。");
-//        if(!checkphone)errs.add("電話番号は、数字10文字以内で入力して下さい。");
-//
-//       if(errs.isEmpty()){
-//           return true;
-//       }else{
-//           return false;
-//       }
-//
-//    }
     private void filterError(String errorField){
         switch (errorField) {
             case "nameEmployee":
-                errs.add("Tên phải nhập từ 3-25 ký tự.");
+                errs.add("お名前は25文字以内で入力して下さい。");
                 break;
             case "mailEmployee":
-                errs.add("Email phải nhập dưới 20 ký tự và có định dạng không hợp lệ.");
+                errs.add("メールアドレスは、20文字以内で正しく入力して下さい。format は　invalid");
                 break;
             case "phoneEmployee":
-                errs.add("Số điện thoại phải nhập dưới 10 chữ số.");
+                errs.add("電話番号は、数字10文字以内で入力して下さい。");
                 break;
             case "password":
-                errs.add("Vui lòng không để trống mật khẩu.");
+                errs.add("パスワードは、empty 入力しないで下さい。");
                 break;
             default:
                 break;

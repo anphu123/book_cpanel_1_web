@@ -42,7 +42,7 @@ public class ApplicationSecurityConfig {
                 .authorizeRequests()
 //                .anyRequest().permitAll()
                 .antMatchers("/api/**").permitAll()
-                .antMatchers("/sach/**").permitAll()
+                .antMatchers("/sach/**").hasAnyAuthority("VIEWER", "EDITOR")
                 .antMatchers("/delete-employee").hasAnyAuthority("ADMIN", "EDITOR")
                 .antMatchers("/self").hasAnyAuthority("ADMIN", "EDITOR","VIEWER")
                 .antMatchers("/gamen2").hasAnyAuthority("ADMIN", "EDITOR","VIEWER")

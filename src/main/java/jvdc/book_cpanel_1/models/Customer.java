@@ -32,6 +32,8 @@ public class Customer {
     @Column(name = "enabled_CS")
     private boolean enabled_CS = true;
 
+
+
     public String getCustomereMail() {
         return customereMail;
     }
@@ -40,19 +42,7 @@ public class Customer {
         this.customereMail = customereMail;
     }
 
-
-//    @OneToMany
-//    private List<SellerComment> sellerComment;
-//
-//    @OneToMany
-//    private List<ProductComment> productComment;
-//
-//    @ManyToOne
-//    private CreditCard creditCard;
-//
-//    @OneToMany
-//    private List<Address> address;
-//
-//    @OneToMany
-//    private List<PromoCode> promoCode;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
 }

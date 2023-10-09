@@ -1,6 +1,7 @@
 package jvdc.book_cpanel_1.services;
 
 import jvdc.book_cpanel_1.models.Employee;
+import jvdc.book_cpanel_1.models.Manga;
 import jvdc.book_cpanel_1.models.Product;
 import jvdc.book_cpanel_1.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class ProductService {
     public Product save(Product product) {
         return productRepository.save(product);
     }
+
+
 
 
 

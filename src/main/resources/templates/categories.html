@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xml:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/core.css}">
+    <script th:src="@{/js/script.js}"></script>
+    <script th:src="@{/js/table.js}"></script>
+
+    <title>Search</title>
+</head>
+<body>
+    <div class="container">
+        <span sec:authentication="name">Username</span>
+        <span sec:authentication="principal.authorities">Roles</span>
+        <span th:text="${idself}"></span>
+        <form>
+            <div class="btn-group " role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/manhinh11_menu'">Menu</button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong">Them Moi</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/logout'">Đăng Xuất</button>
+            </div>
+                <table id="categoriesTable" class="tableemp">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Cap Nhap</th>
+                        <th>Xoa</th>
+                        <th>Ngay Tao</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each ="category :${categoryList}">
+                        <tr>
+                            <td th:text="${category.id}">categorie id</td>
+                            <td th:text="${category.categoryName}">categorie name</td>
+                            <td>Edit</td>
+                            <td th:onclick="|window.location.href='/categories/delete/${category.id}'|">Delete</td>
+                            <td th:text="${category.create_at}">Create At</td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+
+                </table>
+                <br>
+        </form>
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <form th:action="@{/categories/addNew}" method="post">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">THEM LOAI SACH MOI</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form_group">
+                                <label class="col-form-Label">Ten The Loai :</label>
+                                <input type="text" class="form-control" id="categoriesName" name="categoriesName">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tu Choi</button>
+                            <button type="submit" class="btn btn-primary" >Chap Nhan</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

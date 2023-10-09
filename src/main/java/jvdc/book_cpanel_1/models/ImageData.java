@@ -16,10 +16,20 @@ import javax.persistence.*;
 public class ImageData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
     private String name;
+    private String bookname;
     private String type;
+
+    @Column(name = "chapterid")
+    private int chapterID;
+
+    @Column(name = "linkid")
+    private int linkID;
+
     @Lob
     @Column(name = "imagedata", length = 1000)
     private byte[] imageData;
+
+
 }

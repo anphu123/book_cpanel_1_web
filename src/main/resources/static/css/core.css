@@ -2,7 +2,9 @@
 /*conducting*/
 .container {width: 100%;}
 .container_form{display: flex;flex-direction: row;align-content: center;justify-content: center;width: 692px;height: 389px;margin: 100px auto;background-color: #f2f2f2; border: 1px solid darkslategrey;box-shadow: 2px 2px 1px darkslategrey;font-size: 1.2em}
-.box-inside-form{display: flex;width: 47%;padding:12px;flex-direction: column;align-content: center;justify-content: flex-start;margin: unset;background-color: unset;border: unset;box-shadow: unset;}
+.box-inside-form{display: flex;padding:12px;flex-direction: column;align-items: flex-end;;align-content: center;justify-content: flex-start;margin: unset;background-color: unset;border: unset;box-shadow: unset;}
+.box-inside-from-image{width: 37%}
+.box-inside-from-content{width: 57%}
 .support_box1{display: flex;align-items: center; flex-direction: row;justify-content: space-between}
 .dongang1{width: 35%}
 .dongang2{width: 65%}
@@ -30,9 +32,11 @@ form{width: 692px;height: 389px;margin: 100px auto;background-color: #f2f2f2; bo
 .form-optional1{width: 87%;display: flex;justify-content: space-between;flex-direction: row;align-content: flex-start;margin: 0px 11px 11px 0px;}
 .form-optional2{margin: unset;display: flex;border: unset;box-shadow: unset;}
 .margin1 {margin: 19px auto}
+.input_login {position: relative;max-width: 334px;color: #002060;display: flex;flex-direction: row;justify-content: space-between;}
 .formGroup-name{margin-left: 25px; font-size: medium;padding: 6px;}
 .fG-width{width: 50%;}
 
+.product_input{width: 67%}
 .search-input{margin-left: 25px; font-size: medium;padding: 6px;width: 60%;}
 .gamen2_title_bar{display: flex; flex-direction: row; justify-content: space-between; align-items: center;}
 

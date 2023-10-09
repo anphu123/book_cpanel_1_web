@@ -26,20 +26,6 @@ public class CustomerControllerApi {
         return customer;
 
     }
-//
-//    @PostMapping("/login")
-//    public String authenticateAndGetToken(@RequestBody Customer customer) {
-//        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(customer.getCustomereMail(), customer.getCustomerPassword()));
-//        String ketqua =null;
-//        if (authentication.isAuthenticated()) {
-//            ketqua = "dang nhap thanh cong";
-//            System.out.println("dang nhap thanh cong");
-//        } else {
-//            throw new UsernameNotFoundException("invalid user request !");
-//        }
-//        System.out.println("111111111");
-//        return ketqua;
-//    }
 
     @PostMapping(value = "/dang-nhap")
     public Customer login(@RequestBody Customer customer){

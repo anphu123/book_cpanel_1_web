@@ -1,12 +1,11 @@
 package jvdc.book_cpanel_1.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,7 +13,8 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@ToString
+@Getter
+@Setter
 @Table(name = "categorys")
 public class Category {
 
@@ -23,13 +23,14 @@ public class Category {
     private int id;
 
     @Column(name = "category_name")
-    @NotNull
     private String categoryName;
-
 
     public Category(String categoryName) {
         this.categoryName = categoryName;
     }
 
-
+    @Override
+    public String toString() {
+        return categoryName;
+    }
 }

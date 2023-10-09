@@ -10,21 +10,21 @@ function validationForNewEmployeeRegister() {
     phoneEmployee = document.getElementById('txtphoneEmployee').value;
     errs = [];
     if (!nameEmployee.match(nameformat) || nameEmployee.length >= 25) {
-        errs.push("Vui lòng nhập tên của bạn từ 3-25 ký tự.");
+        errs.push("お名前は25文字以内で入力して下さい。");
         document.getElementById("errRegisterEmployeeName").style.color = "red";
     } else {
         document.getElementById("errRegisterEmployeeName").style.color = "#f2f2f2";
     }
 
     if (!mailEmployee.match(mailformat) || mailEmployee.length >= 25) {
-        errs.push("Vui lòng nhập chính xác địa chỉ email của bạn và trong vòng 25 ký tự. Và vui lòng kiểm tra lại định dạng một lần nữa.");
+        errs.push("メールアドレスは、25文字以内で正しく入力して下さい。そして　format　もう　1回　チェックしてください。");
         document.getElementById("errRegisterEmployeeMail").style.color = "red";
     } else {
         document.getElementById("errRegisterEmployeeMail").style.color = "#f2f2f2";
     }
 
     if (!phoneEmployee.match(phoneformat)) {
-        errs.push("Vui lòng nhập số điện thoại của bạn trong vòng 10 số.");
+        errs.push("電話番号は、数字10文字以内で入力して下さい。");
         document.getElementById("errRegisterEmployeePhone").style.color = "red";
     } else {
         document.getElementById("errRegisterEmployeePhone").style.color = "#f2f2f2";
@@ -45,13 +45,13 @@ function validationForNewEmployeeRegister2() {
     let phoneEmployee = document.getElementById('txtphoneEmployee').value;
     let errs = [];
     if (!nameEmployee.match(nameformat)　|| nameEmployee.length >= 25) {
-        errs.push("Vui lòng nhập tên của bạn từ 3-25 ký tự.");
+        errs.push("お名前は25文字以内で入力して下さい。");
     }
     if (!mailEmployee.match(mailformat) || mailEmployee.length >= 25) {
-        errs.push("Vui lòng nhập chính xác địa chỉ email của bạn và trong vòng 25 ký tự. Và vui lòng kiểm tra lại định dạng một lần nữa.");
+        errs.push("メールアドレスは、25文字以内で正しく入力して下さい。そして　format　もう　1回　チェックしてください。");
     }
     if (!phoneEmployee.match(phoneformat)) {
-        errs.push("Vui lòng nhập số điện thoại của bạn trong vòng 10 số.");
+        errs.push("電話番号は、数字10文字以内で入力して下さい。");
     }
 
     if (errs.length === 0) {
