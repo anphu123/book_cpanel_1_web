@@ -19,4 +19,9 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
     @Query("SELECT s FROM Employee s WHERE s.enabled = true ORDER BY s.id")
     List<Employee> selectEmployee();
+
+    @Query("SELECT s FROM Employee s join s.roles r WHERE "
+            + " r.name LIKE %?1% ")
+    public List<Employee> searchEmployeeByRole(String roleEmp);
+
 }

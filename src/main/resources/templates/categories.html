@@ -20,10 +20,10 @@
         <span sec:authentication="principal.authorities">Roles</span>
         <span th:text="${idself}"></span>
         <form>
-            <div class="btn-group " role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary" onclick="window.location.href='/manhinh11_menu'">Menu</button>
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong">Them Moi</button>
-                <button type="button" class="btn btn-secondary" onclick="window.location.href='/logout'">Đăng Xuất</button>
+            <div>
+                <button type="button"  onclick="window.location.href='/manhinh11_menu'">Menu</button>
+                <button type="button"  data-toggle="modal" data-target="#exampleModalLong">Them Moi</button>
+                <button type="button"  onclick="window.location.href='/logout'">Đăng Xuất</button>
             </div>
                 <table id="categoriesTable" class="tableemp">
                     <thead>
@@ -32,7 +32,6 @@
                         <th>Tên</th>
                         <th>Cap Nhap</th>
                         <th>Xoa</th>
-                        <th>Ngay Tao</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -42,7 +41,6 @@
                             <td th:text="${category.categoryName}">categorie name</td>
                             <td>Edit</td>
                             <td th:onclick="|window.location.href='/categories/delete/${category.id}'|">Delete</td>
-                            <td th:text="${category.create_at}">Create At</td>
                         </tr>
                     </th:block>
                     </tbody>

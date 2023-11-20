@@ -37,16 +37,18 @@ public class Product {
     private String productImageName;
     private int soTap;
 
-
     @UpdateTimestamp
     @Column(name = "updated_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt = new Date(); // initialize updated date
 
-
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "mangaid", referencedColumnName = "id")
     private List<Chapter> chapter;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "mangaid", referencedColumnName = "id")
+    private List<MangaComment> mangaCommentList;
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(
@@ -75,11 +77,35 @@ public class Product {
 
     }
 
-
     public void addCategory(Category category){this.categories.add(category);}
     public void removeCategory(Category category){
         this.categories.remove(category);
     }
 
+    public Product(Integer id, String productName, String employeeName, String productAuthor, String productShortDescription, String productImageName, int soTap, Date updatedAt, Set<Category> categories) {
+        this.id = id;
+        this.productName = productName;
+        this.employeeName = employeeName;
+        this.productAuthor = productAuthor;
+        this.productShortDescription = productShortDescription;
+        this.productImageName = productImageName;
+        this.soTap = soTap;
+        this.updatedAt = updatedAt;
+        this.categories = categories;
+    }
+
+    public Product(Integer id, List<MangaComment> mangaCommentList) {
+        this.id = id;
+        this.mangaCommentList = mangaCommentList;
+    }
+
+    public Product(List<MangaComment> mangaCommentList) {
+        this.mangaCommentList = mangaCommentList;
+    }
+
+    public void addComment(MangaComment mangaComment){this.mangaCommentList.add(mangaComment);}
+    public void removeComment(MangaComment mangaComment){
+        this.mangaCommentList.remove(mangaComment);
+    }
 
 }

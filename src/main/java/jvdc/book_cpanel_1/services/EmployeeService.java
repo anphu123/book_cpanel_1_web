@@ -18,6 +18,10 @@ public class EmployeeService {
         return employeeRepository.selectEmployee();
     }
 
+    public List<Employee> listAllByRole(String rolEmp) {
+        return employeeRepository.searchEmployeeByRole(rolEmp);
+    }
+
     public Employee save1(Employee employee) {
         return employeeRepository.save(employee);
     }

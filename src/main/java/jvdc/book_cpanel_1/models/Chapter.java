@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -18,14 +19,13 @@ import java.util.Set;
 public class Chapter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
 
     private String Name;
-    private Integer mangaid;
-
+    private int mangaid;
+    private boolean paytoview;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "linkid", referencedColumnName = "id")
     private List<Link> linkList;
-
 
 }

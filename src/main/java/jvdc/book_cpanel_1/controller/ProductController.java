@@ -6,6 +6,7 @@ import jvdc.book_cpanel_1.models.Employee;
 import jvdc.book_cpanel_1.models.ImageData;
 import jvdc.book_cpanel_1.models.Product;
 import jvdc.book_cpanel_1.repository.CategoryRepository;
+import jvdc.book_cpanel_1.services.MangaCommentService;
 import jvdc.book_cpanel_1.services.ProductService;
 import jvdc.book_cpanel_1.services.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,8 @@ public class ProductController {
     private ProductService productService;
     @Autowired
     private CategoryRepository categoryRepository;
+
+
     @Autowired
     private StorageService service;
     @GetMapping("")
@@ -53,6 +56,7 @@ public class ProductController {
         model.addAttribute("product",product);
         return "manhinh12.2_ThemMoi";
     }
+
     @PostMapping(value = "/them-moi/saveproduct")
     public String addImagePost(
             @RequestParam("image")MultipartFile file,

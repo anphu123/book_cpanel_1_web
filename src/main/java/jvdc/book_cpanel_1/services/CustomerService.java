@@ -1,8 +1,10 @@
 package jvdc.book_cpanel_1.services;
 import jvdc.book_cpanel_1.auth.MyUserDetails;
-import jvdc.book_cpanel_1.models.Customer;
-import jvdc.book_cpanel_1.models.Employee;
+import jvdc.book_cpanel_1.models.*;
+import jvdc.book_cpanel_1.repository.AddressRepository;
+import jvdc.book_cpanel_1.repository.CoinReponsitory;
 import jvdc.book_cpanel_1.repository.CustomerRepository;
+import jvdc.book_cpanel_1.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,13 +16,31 @@ import java.util.Optional;
 public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
+
+    @Autowired
+    CoinReponsitory coinReponsitory;
+
+    @Autowired
+    AddressRepository addressRepository;
+
+
+    @Autowired
+    OrderRepository orderRepository;
     public void saveCustomer1(Customer customer) {
         Optional<Customer>  customerbyEmail = customerRepository.findCustomerByMail(customer.getCustomereMail());
         if(customerbyEmail.isPresent()){
             throw new IllegalStateException("Tai Khoan Email da duoc su dung");
         }
         customerRepository.save(customer);
+        System.out.println(customer.getId());
+        Coin coin = new Coin(0);
+        Address address = new Address("Viet Nam", "Ho Chi Minh","Q12,Ton Dang");
+        customer.setCoin(coin);
+        customer.setAddress(address);
+        coinReponsitory.save(coin);
+        addressRepository.save(address);
     }
+    public Customer updateCustomer(Customer customer) {return customerRepository.save(customer);}
 
     public Customer loadCustomerByEmail(String email) throws UsernameNotFoundException {
         Customer customer = customerRepository.loginByEmail(email);
@@ -30,7 +50,8 @@ public class CustomerService {
         return customer;
     }
 
-    public Customer get(int id) {
+
+    public Customer getCustomerById(int id) {
         Optional<Customer> customer = customerRepository.findById(id);
         if (customer.isPresent()) {
             return customer.get();
@@ -41,5 +62,6 @@ public class CustomerService {
                 throw new RuntimeException(e);
             }
     }
+
 
 }

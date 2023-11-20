@@ -1,13 +1,9 @@
 package jvdc.book_cpanel_1.models;
 
 import lombok.*;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+
 
 @Data
 @AllArgsConstructor

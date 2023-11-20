@@ -20,6 +20,12 @@ public class EmpControllerApi {
         return employeeList;
     }
 
+    @GetMapping(value = "/get-one-byrole/{roleEmp}")
+    public List<Employee> getEmployeesByRole(@PathVariable(name = "roleEmp")String roleEmp){
+        List<Employee> employeeList = employeeService.listAllByRole(roleEmp);
+        return employeeList;
+    }
+
 //    http://localhost:8080/api/v1/employee/get-one/{id}
     @GetMapping(value = "/get-one/{id}")
         public Employee selectSingleEmp(@PathVariable(name = "id")int id){

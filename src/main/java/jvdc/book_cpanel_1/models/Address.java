@@ -27,6 +27,9 @@ public class Address {
     @Column(name = "street")
     private String street;
 
-    @OneToOne(mappedBy = "address")
-    private Customer Customer;
+    public Address(String country, String city, String street) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+    }
 }

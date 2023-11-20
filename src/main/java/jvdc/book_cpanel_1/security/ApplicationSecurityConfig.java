@@ -42,6 +42,7 @@ public class ApplicationSecurityConfig {
                 .authorizeRequests()
 //                .anyRequest().permitAll()
                 .antMatchers("/api/**").permitAll()
+                .antMatchers("/api/v2/coins/**").hasAnyAuthority("ADMIN")
                 .antMatchers("/sach/**").hasAnyAuthority("VIEWER", "EDITOR")
                 .antMatchers("/delete-employee").hasAnyAuthority("ADMIN", "EDITOR")
                 .antMatchers("/self").hasAnyAuthority("ADMIN", "EDITOR","VIEWER")

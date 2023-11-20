@@ -21,6 +21,7 @@ public class ImageData {
     private String bookname;
     private String type;
 
+    private String url;
     @Column(name = "chapterid")
     private int chapterID;
 
