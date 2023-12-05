@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xml:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/core.css}">
+    <script th:src="@{/js/script.js}"></script>
+    <script th:src="@{/js/table.js}"></script>
+
+    <title>Permission denied</title>
+</head>
+<body>
+
+<div class="container">
+    <form name="gamen10">
+        <div class="support_box1 dongang3">
+            <p class="gamen_title">この　page　アックセット　できません。</p>
+            <button class="button btn-optional2" type="button" onclick="window.location.href='/logout'">ログアウト</button>
+
+        </div>
+        <div class="blank_row"></div>
+        <div class="blank_row"></div>
+        <div class="blank_row"></div>
+        <div class="blank_row"></div>
+        <p class="gamen_content">もうどうる。</p>
+        <div class="blank_row"></div>
+
+        <div class="support_box1 dongang5">
+            <button class="button btn-optional2" type="button"  onclick="window.history.back()">Ok</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
