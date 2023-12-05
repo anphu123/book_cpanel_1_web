@@ -1,11 +1,0 @@
-
-†
-java:S1488"dImmediately return this expression instead of assigning it to the temporary variable "employeeList".(°ŸµŽüÿÿÿÿ8¨ÏŽ¤‡1
-‚
-java:S1488"`Immediately return this expression instead of assigning it to the temporary variable "employee".(´ÙÁ‰úÿÿÿÿ8¨ÏŽ¤‡1
-X	java:S125"<This block of commented-out lines of code should be removed.(þ„Ÿ‘8²ÏŽ¤‡1
-X	java:S125"<This block of commented-out lines of code should be removed.(ÇÂ´8µÏŽ¤‡1
-\
-java:S4684&"@Replace this persistent entity with a simple POJO or DTO object.(ºÍß@8¶ÏŽ¤‡1
-U	java:S106'"9Replace this use of System.out or System.err by a logger.(¼¡¨ò8¸ÏŽ¤‡1
-X	java:S125-"<This block of commented-out lines of code should be removed.(ßÓ˜‡8¸ÏŽ¤‡1
